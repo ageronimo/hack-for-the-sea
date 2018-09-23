@@ -15,7 +15,7 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 20% 80%;
+  /* grid-template-columns: 20% 80%; */
 }
 
 #main-container {
@@ -748,5 +748,54 @@ input:checked ~ .checkmark {
 
   .submit-button {
     grid-column-start: 1 !important;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  #openMenu {
+    width: 48px;
+    height: 60px;
+    position: absolute;
+    background-color: #F58F31;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    top: 5px;
+    z-index: 2;
+  }
+  
+  #openMenu img {
+    width: 30px;
+    height: 35px;
+    position: relative;
+    filter: brightness(65%);
+    right: -7px;
+    top: 11px;
+  }
+  
+  .activeMenu {
+    left: 80%;
+  }
+  
+  .inactiveMenu {
+    left: 0%;
+  }
+  
+  .activeGrid {
+    grid-template-columns: 80% 80%;
+    overflow-x: hidden;
+  }
+  
+  .inactiveGrid {
+    grid-template-columns: 0% 100%;
+  }
+}
+
+@media (min-width: 601px) {
+  #pageContainer {
+    grid-template-columns: 20% 80%;
+  }
+
+  #openMenu {
+    display: none;
   }
 }
